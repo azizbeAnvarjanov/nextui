@@ -38,7 +38,10 @@ const Header = () => {
   ];
 
   return (
-    <Navbar onMenuOpenChange={setIsMenuOpen} className="shadow-md h-[22vh] flex items-center">
+    <Navbar
+      onMenuOpenChange={setIsMenuOpen}
+      className="shadow-md flex items-center"
+    >
       <NavbarContent>
         <NavbarMenuToggle
           aria-label={isMenuOpen ? "Close menu" : "Open menu"}
@@ -105,12 +108,8 @@ const Header = () => {
         </NavbarContent>
       ) : (
         <NavbarContent justify="end">
-          <NavbarItem className="flex">
-            <LoginModal />
-          </NavbarItem>
-          <NavbarItem>
-            <RegisterModal />
-          </NavbarItem>
+          <LoginModal />
+          <RegisterModal />
         </NavbarContent>
       )}
 
