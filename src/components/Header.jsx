@@ -107,15 +107,13 @@ const Header = () => {
           </Dropdown>
         </NavbarContent>
       ) : (
-        <NavbarContent justify="end">
-          <LoginModal />
+        <div className="flex gap-3" justify="end">
           <RegisterModal />
-        </NavbarContent>
+          <LoginModal />
+        </div>
       )}
 
       <NavbarMenu>
-        <LoginModal />
-        <RegisterModal />
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
