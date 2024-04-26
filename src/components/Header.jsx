@@ -114,6 +114,8 @@ const Header = () => {
       )}
 
       <NavbarMenu>
+        <LoginModal />
+        <RegisterModal />
         {menuItems.map((item, index) => (
           <NavbarMenuItem key={`${item}-${index}`}>
             <Link
