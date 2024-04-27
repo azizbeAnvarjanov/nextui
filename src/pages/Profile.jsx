@@ -16,7 +16,7 @@ const Profile = () => {
       navigate("/");
       toast.error("User not loged in");
     }
-  });
+  },[]);
   const avatarImg = user?.avatarImg;
 
   return (
