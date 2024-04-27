@@ -28,6 +28,10 @@ const Header = () => {
   const navigate = useNavigate();
 
   const logOutUser = useStore((state) => state.logOutUser);
+  const logOutUserF = () => {
+    navigate('/');
+    logOutUser();
+  }
   
   const menuItems = [
     "Profile",
@@ -105,7 +109,7 @@ const Header = () => {
               <DropdownItem key="help_and_feedback">
                 Help & Feedback
               </DropdownItem>
-              <DropdownItem onClick={logOutUser} key="logout" color="danger">
+              <DropdownItem onClick={logOutUserF} key="logout" color="danger">
                 Log Out
               </DropdownItem>
             </DropdownMenu>
