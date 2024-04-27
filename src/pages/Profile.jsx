@@ -4,13 +4,20 @@ import { auth, db, storage } from "../../firebaseConfig";
 import { Input } from "@nextui-org/input";
 import { Button } from "@nextui-org/react";
 import { getDownloadURL, getStorage, ref, uploadBytes } from "firebase/storage";
+import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const Profile = () => {
-  const user = JSON.parse(localStorage.getItem('userDetails'))
-  const avatarImg = user?.avatarImg
+  const navigate = useNavigate();
+  const user = JSON.parse(localStorage.getItem("userDetails"));
 
-
-
+  useEffect(() => {
+    if (!user) {
+      navigate("/");
+      toast.error("User not loged in");
+    }
+  });
+  const avatarImg = user?.avatarImg;
 
   return (
     <div>
